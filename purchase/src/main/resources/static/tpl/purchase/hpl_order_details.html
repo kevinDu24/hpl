@@ -1,0 +1,21 @@
+<div ng-controller="applyDetailsController">
+    <div class="wrapper-xs" ng-if="!showSearchList" style="padding-top: 20px;">
+        <div align="center"><img src="img/logo_icon.png" alt="." height="30px" style="margin-bottom: 5px;">&nbsp;
+            <label style="font-weight: bold;font-size: 17px;margin-bottom:0px;">个人融资租赁</label></div>
+        <ul align="center" class="timeline" style="width:210px;margin:20px auto;">
+            <li class="tl-header">
+                <div class="" style="margin-bottom: 5px;">姓名：{{ApplicantsInfo.name}} <br/>申请编号：{{ApplicantsInfo.num}}</div>
+            </li>
+            <li class="tl-item" ng-repeat="item in items">
+                <div class="tl-wrap b-success" ng-class="{'b-danger':item.BASQZT=='拒绝'||item.BASQZT=='取消','b-warning':item.BASQZT=='条件通过'}">
+                    <span class="tl-date font-bold text-success" ng-class="{'text-danger':item.BASQZT=='拒绝'||item.BASQZT=='取消', 'text-warning':item.BASQZT=='条件通过'}">{{item.BASQZT}}</span>
+                    <span class="tl-date m-t-md" ng-if="item.BASQZT=='拒绝' || item.BASQZT=='取消' || item.BASQZT=='条件通过'">{{item.BATHYY}}</span>
+                    <p><nobr>完成时间：</nobr></br><nobr>{{convertDate(item.BASHRQ)}}</nobr></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="u11" class="text" align="center">
+        {{resultMessage}}
+    </div>
+</div>

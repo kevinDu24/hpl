@@ -1,0 +1,97 @@
+<style>
+    .icon {
+        font-size: 80px;
+    }
+</style>
+<div class="container w-xxl w-auto-xs" align="center" ng-controller="hplVehicleAttachmentController">
+    <div class="div row-sm" style="margin:0 auto ;margin-top: 20px">
+        <img src="img/logo_icon.png" style="width:30px;height:30px;">
+        <label style="font-weight: bold;font-size: 17px;"> 个人融资租赁</label>
+    </div>
+    <div style="margin-left:-103px;margin-top: 5px">
+        <img src="img/attachment.png" style="width:20px;height:20px; margin-left:-103px;">
+        <label> 附件上传(必填项*)</label>
+    </div>
+    <hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:10px;" />
+    <div class="div row-sm" style="margin-left: 5px;margin-top: 10px">
+        <div style="width: 100px;height: 150px; margin-left: 0px;float: left;">
+            <label>身份证正面</label>
+            <div style="width: 80px;height: 120px;border:1px solid #000000;background-color: #edf1f2;">
+                <input type="file" id="idCardFace" name="idCardFace" style="display:none" file-model="idCardFace"
+                       onchange="angular.element(this).scope().uploadFile(1)">
+                <span>
+                        <i class="icon ion-plus" ng-click="openFile(1)" ng-show="notUpload1"></i>
+                        <i class="icon ion-checkmark-circled" ng-click="openFile(1)" style="color:#27c24c"
+                           ng-show="uploaded1"></i>
+                </span>
+            </div>
+        </div>
+        <div style="width: 100px;height: 150px; margin-left: 8px;float: left;">
+            <label>身份证反面</label>
+            <div style="width: 80px;height: 120px;border:1px solid #000000;background-color: #edf1f2;">
+                <input type="file" id="idCardBack" name="idCardBack" style="display:none" file-model="idCardBack"
+                       onchange="angular.element(this).scope().uploadFile(2)">
+                <span>
+                        <i class="icon ion-plus" ng-click="openFile(2)" ng-show="notUpload2"></i>
+                        <i class="icon ion-checkmark-circled" ng-click="openFile(2)" style="color:#27c24c"
+                           ng-show="uploaded2"></i>
+                </span>
+            </div>
+        </div>
+        <div style="width: 125px;height: 150px; margin-left: 0px;float: left;">
+            <label>征信委托授权书</label>
+            <div style="width: 80px;height: 120px;border:1px solid #000000;background-color: #edf1f2;">
+                <input type="file" id="creditLetter" name="creditLetter" style="display:none" file-model="creditLetter"
+                       onchange="angular.element(this).scope().uploadFile(3)">
+                <span>
+                        <i class="icon ion-plus" ng-click="openFile(3)" ng-show="notUpload3"></i>
+                        <i class="icon ion-checkmark-circled" ng-click="openFile(3)" style="color:#27c24c"
+                           ng-show="uploaded3"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="div row-sm" style="margin-left: 5px;">
+        <div style="width: 100px;height: 150px; margin-left: 0px;float: left;margin-top: 20px">
+            <label>驾驶证主页</label>
+            <div style="width: 80px;height: 120px;border:1px solid #000000;background-color: #edf1f2;">
+                <input type="file" id="drivingLicenseFace" name="drivingLicenseFace" style="display:none" file-model="drivingLicenseFace"
+                       onchange="angular.element(this).scope().uploadFile(4)">
+                <span>
+                        <i class="icon ion-plus" ng-click="openFile(4)" ng-show="notUpload4"></i>
+                        <i class="icon ion-checkmark-circled" ng-click="openFile(4)" style="color:#27c24c"
+                           ng-show="uploaded4"></i>
+                </span>
+            </div>
+        </div>
+        <div style="width: 100px;height: 150px; margin-left: 8px;float: left;margin-top: 20px">
+            <label>驾驶证副页</label>
+            <div style="width: 80px;height: 120px;border:1px solid #000000;background-color: #edf1f2;">
+                <input type="file" id="drivingLicenseBack" name="drivingLicenseBack" style="display:none" file-model="drivingLicenseBack"
+                       onchange="angular.element(this).scope().uploadFile(5)">
+                <span>
+                        <i class="icon ion-plus" ng-click="openFile(5)" ng-show="notUpload5"></i>
+                        <i class="icon ion-checkmark-circled" ng-click="openFile(5)" style="color:#27c24c"
+                           ng-show="uploaded5"></i>
+                </span>
+            </div>
+        </div>
+        <div style="width: 125px;height: 150px; margin-left: 0px;float: left;margin-top: 20px">
+            <label>工作证明附件</label>
+            <div style="width: 80px;height: 120px;border:1px solid #000000;background-color: #edf1f2;">
+                <input type="file" id="jobCertificate" name="jobCertificate" style="display:none" file-model="jobCertificate"
+                       onchange="angular.element(this).scope().uploadFile(6)">
+                <span>
+                        <i class="icon ion-plus" ng-click="openFile(6)" ng-show="notUpload6"></i>
+                        <i class="icon ion-checkmark-circled" ng-click="openFile(6)" style="color:#27c24c"
+                           ng-show="uploaded6"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="submit()"
+            style="background:#FF8C00;border-radius:8px;border:1px solid #FF8C00;width: 300px;height: 40px;margin-top: 50px;">
+        提交咯 ,搞定收工 !
+    </button>
+
+</div>

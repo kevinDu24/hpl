@@ -1,0 +1,69 @@
+<div ng-controller="hplSelectVehicleController">
+    <div class="wrapper-xs" >
+        <div class="panel panel-default">
+            <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+            <div class="panel-body">
+                <div align="center"><img src="img/logo_icon.png" alt="." height="30px" style="margin-bottom: 5px;">&nbsp;
+                    <label style="font-weight: bold;font-size: 17px;margin-bottom:0px;">个人融资租赁</label></div>
+                <form name="form" class="form-validation" novalidate>
+                    <div class="form-group">
+                        <div><img src="img/common/车辆类型.png" alt="." height="20px"><label>车辆类型</label></div>
+                        <hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:10px;" />
+                        <div><label>车型：</label></div>
+                        <div class="col-sm-9">
+                            <div class="radio" style="margin-top:0px; margin-bottom:0px;">
+                                <label ng-repeat="type in vehicleTypes">
+                                    <input type="radio" name="vehicleType" value="{{type.key}}" ng-model="order.vehicleType" ng-change="onChangeType()">
+                                    <i></i>
+                                    <img src="{{type.url}}" alt="." height="40px"><br>
+                                    &nbsp;&nbsp;{{type.value}}
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label>车辆颜色：</label>
+                            <select name="color" ng-model="order.color"  ng-options="color as color for color in vehicle.colors">
+                            </select>
+                        </div>
+                        <p style="line-height:5px;"/>
+                        <div><img src="img/common/车辆信息.png" alt="." height="20px"><label>车辆信息</label></div>
+                        <hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:10px;" />
+                        <div align="center"><label>─────基本配置─────</label></div>
+                        <div>&nbsp;<label>车身结构</label>&nbsp;&nbsp;&nbsp;&nbsp;{{vehicle.structure}}</div>
+                        <div><hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:3px;" /></div>
+                        <div>&nbsp;<label>长宽高</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{vehicle.size}}</div>
+                        <div><hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:3px;" /></div>
+                        <div>&nbsp;<label>发动机</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{vehicle.engine}}</div>
+                        <div><hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:3px;" /></div>
+                        <div>&nbsp;<label>变速箱</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{vehicle.gearBox}}</div>
+                        <div><hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:3px;" /></div>
+                        <div>&nbsp;<label>驱动方式</label>&nbsp;&nbsp;&nbsp;&nbsp;{{vehicle.driveMode}}</div>
+                        <div><hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:3px;" /></div>
+                        <div>&nbsp;<label>燃料形式</label>&nbsp;&nbsp;&nbsp;&nbsp;{{vehicle.fuelType}}</div>
+                        <div><hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:3px;" /></div>
+                        <div>&nbsp;<label>综合油耗</label>&nbsp;&nbsp;&nbsp;&nbsp;{{vehicle.fuelConsumption}}</div>
+                        <hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:10px;" />
+                        <div align="center"><label>─────车辆亮点─────</label></div>
+                        <div align="center">
+                            <div class="radio" style="margin-top:0px; margin-bottom:0px; padding-left:0px;padding-right:20px;">
+                                <label ng-repeat="merit in vehicle.meritInfos">
+                                    <img style="padding-left:0px" src="{{merit.url}}" alt="." height="40px"><br>
+                                    {{merit.name}}
+                                </label>
+                            </div>
+                        </div>
+                        <p style="line-height:5px;"/>
+                        <div><img src="img/common/融资产品类型.png" alt="." height="20px"><label>融资产品类型</label></div>
+                        <hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:10px;"/>
+                        <div>
+                            <label>车型产品：</label>
+                            <input type="radio" name="product" value="0" ng-model="order.product">A套餐
+                            <input type="radio" name="product" value="1" ng-model="order.product">B套餐
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full" style="background:#FF8C00;border-radius:8px;border:1px solid #FF8C00" ng-click="submit()">车选好咯，可以贷款咯！</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

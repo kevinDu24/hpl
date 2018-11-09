@@ -1,0 +1,43 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+server:
+  port: 9526
+spring:
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  redis:
+    ##集群对外暴露的IP
+    host: 222.73.56.25
+    port: 6379
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://222.73.56.25:5432/approval
+    username: postgres
+    password: LeaduAbc123
+    driver-class-name: org.postgresql.Driver
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+file:
+  attachmentPath: /var/www/html/attachment/
+  requestAttachmentPath: http://222.73.56.25:9526/files/download/
+
+request:
+  coreServerUrl: http://happyleasing.cn/TMZL/app/
+  coreServerYCUrl: http://credit.yachileasing.com/YCZL/app
+  adminServerUrl: http://222.73.56.22:8089
+
+approval:
+  period: 1

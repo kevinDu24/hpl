@@ -1,0 +1,30 @@
+<div class="container w-xxl w-auto-xs" align="center" ng-controller="purchaseSigninController">
+    <img src="img/logo_icon.png" alt="." height="100px">
+    <a href class="navbar-brand block m-b-md">
+        <span class="" style="font-size: 30px;color: #666666;">快速登录页</span>
+    </a>
+    <div >
+        <form name="form" class="form-validation" novalidate>
+            <div class="text-danger wrapper text-center" ng-show="authError">
+                {{authError}}
+            </div>
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon no-bg">手机号:</span>
+                        <input type="number" class="form-control input-lg" placeholder="请输入您的手机号" ng-model="phoneNum" required>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon no-bg">验证码:</i></span>
+                        <input type="number" placeholder="短信验证码" class="form-control input-lg" ng-model="code" required>
+                        <span class="input-group-addon no-bg"  role="button" tabindex="0"><button class="btn btn-info btn-sm" ng-click="getSmsCode()"><timer interval="1000" countdown="60" autostart="false" ng-show="startCountdown">{{countdown}}</timer>{{showMsg}}</button></span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary btn-block m-b-sm" ng-click="login()" style="background:#FF8C00;border-radius:8px;border:1px solid #FF8C00">快速登录</button>
+        </form>
+    </div>
+    <div class="" style="font-size:14px; color:#000; text-align:center;">PS：只需输入手机号获取验证码就可关联自己的信息咯</div>
+</div>

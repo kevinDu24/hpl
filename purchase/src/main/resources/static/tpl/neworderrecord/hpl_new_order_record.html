@@ -1,0 +1,71 @@
+<div class="container w-xxl w-auto-xs" align="center" ng-controller="hplNewOrderRecordController">
+    <div class="div row-sm" style="margin:0 auto ;margin-top: 20px">
+        <img src="img/logo_icon.png" style="width:30px;height:30px;">
+        <label style="font-weight: bold;font-size: 17px;"> 个人融资租赁</label>
+    </div>
+    <div style="margin-left:-93px;margin-top: 5px">
+        <img src="img/personinfo.png" style="width:20px;height:20px; margin-left:-93px;">
+        <label> 个人信息采集(必填项*)</label>
+    </div>
+    <hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:10px;" />
+    <div style="margin-left:-15px;">
+        <div class="form-group">
+            <label class="col-sm-3 col-xs-4 control-label" style="width: auto">工作单位：</label>
+            <div class="col-sm-8 col-xs-8" style="float: left;width: 280px;margin-left: 80px;;margin-top:-30px;">
+                <input type="text" class="form-control" ng-model="purchaseOrderInfo.company" placeholder="请输入您单位名称"/>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:15px;">
+            <label class="col-sm-3 col-xs-4 control-label" style="width: auto;margin-top:15px;">工作地址：</label>
+            <div class="col-sm-8 col-xs-8" style="float: left;width: 280px;margin-left: 80px;margin-top:-30px;">
+                <input type="text" class="form-control" ng-model="purchaseOrderInfo.workAdd" placeholder="请输入您单位地址"/>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:15px;">
+            <label class="col-sm-3 col-xs-4 control-label" style="width: auto;margin-top:15px;">实际居住地：</label>
+            <div class="col-sm-8 col-xs-8" style="float: left;width: 280px;margin-left: 80px;margin-top:-30px;">
+                <input type="text" class="form-control" ng-model="purchaseOrderInfo.liveAdd" placeholder="请输入您的实际居住地"/>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:15px;">
+            <label class="col-sm-3 col-xs-4 control-label" style="width: auto;margin-top:15px;">户籍地址：</label>
+            <div class="col-sm-8 col-xs-8" style="float: left;width: 280px;margin-left: 80px;margin-top:-30px;">
+                <input type="text" class="form-control" ng-model="purchaseOrderInfo.localAdd" placeholder="请输入您的户籍地址"/>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left:3px;margin-top: 185px">
+        <input type="radio" name="searchType" value="0" ng-model="searchType" ng-click="onChangeRadio()">同实际居住地
+        <input type="radio" name="searchType" value="1" ng-model="searchType" ng-click="onChangeRadio()">重新填写
+    </div>
+    <div style="margin-left:-103px;margin-top: 10px">
+        <img src="img/personinfo.png" style="width:20px;height:20px; margin-left:-103px;">
+        <label> 银行卡信息(必填项*)</label>
+    </div>
+    <hr style="height:1px;border:none;border-top:1px solid #555555;margin-top:0px;margin-bottom:10px;" />
+    <div style="margin-left:-15px;">
+        <div class="form-group">
+            <label class="col-sm-3 col-xs-4 control-label" style="width: auto;">还款借记卡户名：</label>
+            <div class="col-sm-8 col-xs-8" style="float: left;width: 240px;margin-left: 120px;margin-top:-30px;">
+                <input type="text" class="form-control" ng-model="purchaseOrderInfo.bankUser" placeholder="请输入您姓名"/>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:15px;">
+            <label class="col-sm-3 col-xs-4 control-label" style="width: auto;margin-top:15px;">还款借记卡卡号：</label>
+            <div class="col-sm-8 col-xs-8" style="float: left;width: 240px;margin-left: 120px;margin-top:-30px;">
+                <input type="text" class="form-control" ng-model="purchaseOrderInfo.bankCard" placeholder="请输入您银行卡卡号"/>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:15px;">
+            <label class="col-sm-3 col-xs-4 control-label" style="width: auto;margin-top:15px;">还款借记卡开户行：</label>
+            <div class="col-sm-8 col-xs-8" style="float: left;width: 220px;margin-left: 140px;margin-top:-30px;">
+                <select ng-options="marks.BAHKYH as marks.BAHKYH for marks in bankNameList" class="form-control w-lg m-r-xs pull-right" ng-model="purchaseOrderInfo.bankName" style="width: 180px;">
+                    <!--<option value=""></option>-->
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="next()" style="background:#FF8C00;border-radius:8px;border:1px solid #FF8C00;width: 300px;height: 40px;margin-top: 70px;">
+        还有一步喽 !
+    </button>
+</div>

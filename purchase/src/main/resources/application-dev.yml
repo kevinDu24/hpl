@@ -1,0 +1,58 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+server:
+  port: 8088
+spring:
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  redis:
+    ##集群对外暴露的IP
+    host: 116.236.234.246
+    port: 33379
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://222.73.56.27:5081/jicai
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+etonenetParam:
+  mtUrl: http://esms100.10690007.net/sms/mt
+  command: MT_REQUEST
+  spid: 9686
+  sppassword: iWmn0ddP
+  spsc: 00
+  sa: 10657109053657
+  haltPhoneNum: 18055313782
+sms:
+  ip: 222.73.56.19
+  port: 69
+file:
+  attachmentPath: /var/www/html/attachment/
+  requestAttachmentPath: http://localhost:8088/files/download/
+
+appVersionPublishAuth:
+  username: appversionPublish
+  password: versionManage
+
+request:
+  coreServerUrl: http://happyleasing.cn/TMZL/app/
+  coreApplyServerUrl: http://116.236.234.246:7082/XFTM_KF/app
+  coreServerYCUrl: http://credit.yachileasing.com/YCZL/app
+  adminServerUrl: http://222.73.56.22:8089
+
+hpl:
+  period: 1
